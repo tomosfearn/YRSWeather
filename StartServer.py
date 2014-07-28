@@ -15,8 +15,11 @@ def my_form_post():
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + text
     response = urllib.urlopen(url)
     data = json.loads(response.read())
-    return data['weather'][0]['description']
-
+    if data['weather'][0]['description'].find("Rain") >= 0:
+	return "Shut your window"
+    else:
+	return "everything is fine"
+    
 if __name__ == '__main__':
     app.debug = True
     app.run()
