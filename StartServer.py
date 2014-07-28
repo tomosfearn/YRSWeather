@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-
+import json, urllib
 app = Flask(__name__)
 
 @app.route('/')
@@ -12,8 +12,10 @@ def my_form():
 def my_form_post():
 
     text = request.form['text']
-    processed_text = text.upper()
-    return processed_text
+    url = "http://api.openweathermap.org/data/2.5/weather?q=" + text
+    response = urllib.urlopen(url)
+    data = json.loads(response.read())
+    return data['weather'][0]['description']
 
 if __name__ == '__main__':
     app.debug = True
