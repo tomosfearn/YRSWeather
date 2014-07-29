@@ -13,11 +13,11 @@ def my_form():
 @app.route('/', methods=['POST'])
 def my_form_post():
     openwindow_at = request.form['open']
-    if request.form['kelvin'] == "on":
+    if request.form['scale'] == "kelvin":
 	print("Do nothing")
-    elif request.form['celcius'] == "on":
+    elif request.form['scale'] == "celcius":
 	openwindow_at = openwindow_at + 273.15
-    #elif request.form['fah'] == "on":
+    #elif request.form['scale'] == "fah":
 	#openwindow_at = (openwindow_at + 459.67) * 5 / 9 
     text = request.form['text']
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + text
