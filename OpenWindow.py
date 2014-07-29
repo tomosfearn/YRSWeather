@@ -1,4 +1,4 @@
-from serial import serial
+from serial import Serial
 
 ser = Serial('/dev/ttyUSB0', 9600)
 
