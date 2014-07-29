@@ -16,9 +16,9 @@ def my_form_post():
     if request.form['scale'] == "kelvin":
 	print("Do nothing")
     elif request.form['scale'] == "celcius":
-	openwindow_at = openwindow_at + 273
+	openwindow_at = openwindow_at + 273 #celcius to kelvin
     elif request.form['scale'] == "fah":
-	openwindow_at = (openwindow_at + 459.67) * 5 / 9 
+	openwindow_at = (openwindow_at + 459.67) * 5 / 9  #F to kelvin
     text = request.form['text']
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + text
     response = urllib.urlopen(url)
@@ -27,10 +27,11 @@ def my_form_post():
     while True:
     	if data['weather'][0]['description'].find("rain") >= 0:
 		return "Shutting your window"
+		#Close the window(Tom's job)
     	else:
 		if data['main']['temp'] >= 200:
 			return "Opening your window"
-    		#open the window (Tom's job)
+    			#open the window (Tom's job)
 if __name__ == '__main__':
     app.debug = True
     app.run()
