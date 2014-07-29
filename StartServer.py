@@ -12,22 +12,24 @@ def my_form():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
+    openwindow_at = request.form['open']
+    if request.form['kelvin'] == "on":
+	print("Do nothing")
+    elif request.form['celcius'] == "on":
+	openwindow_at = openwindow_at + 273.15
+    #elif request.form['fah'] == "on":
+	#openwindow_at = (openwindow_at + 459.67) * 5 / 9 
     text = request.form['text']
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + text
     response = urllib.urlopen(url)
     data = json.loads(response.read())
-    print("Current Weather in " + text + data['weather'][0]['description'])
+    print("Current Weather in " + text + " " + data['weather'][0]['description'])
     while True:
     	if data['weather'][0]['description'].find("rain") >= 0:
-		return "Shut your window"
-		if request.form['WindowControl'] == "on":
-			#shut the window
-			return "Shutting window"
-   		else:
-			#do nothing
-			return ("Window control disabled not shutting")
+		return "Shutting your window"
     	else:
-		return "everything is fine"
+		if data['main']['temp'] >= 200:
+			return "Opening your window"
     		#open the window if config option is true
 if __name__ == '__main__':
     app.debug = True
