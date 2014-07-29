@@ -1,0 +1,1 @@
+{"name":"Weathertest yrs","tagline":"YRS2014 weather System test","body":"How to install\r\n\r\nRequirments\r\nFlask\r\n```\r\n$ cd ~\r\n$ sudo pip install flask\r\n``` \r\nJson\r\nUrllib\r\n\r\nTo install\r\n","google":"","note":"Don't delete this file! It's used internally to help with page regeneration."}
