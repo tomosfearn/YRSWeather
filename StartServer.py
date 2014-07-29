@@ -17,8 +17,8 @@ def my_form_post():
 	print("Do nothing")
     elif request.form['scale'] == "celcius":
 	openwindow_at = openwindow_at + 273
-    #elif request.form['scale'] == "fah":
-	#openwindow_at = (openwindow_at + 459.67) * 5 / 9 
+    elif request.form['scale'] == "fah":
+	openwindow_at = (openwindow_at + 459.67) * 5 / 9 
     text = request.form['text']
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + text
     response = urllib.urlopen(url)
@@ -30,7 +30,7 @@ def my_form_post():
     	else:
 		if data['main']['temp'] >= 200:
 			return "Opening your window"
-    		#open the window if config option is true
+    		#open the window (Tom's job)
 if __name__ == '__main__':
     app.debug = True
     app.run()
