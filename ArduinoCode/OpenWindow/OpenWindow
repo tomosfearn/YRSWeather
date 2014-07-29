@@ -1,0 +1,6 @@
+void loop(){
+char incomingByte = (char)Serial.read();
+if(incomingByte=='1'){
+//Open window code
+}
+}
