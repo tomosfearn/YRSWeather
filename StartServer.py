@@ -29,7 +29,7 @@ def my_form_post():
 		return "Shutting your window"
 		#Close the window(Tom's job)
     	else:
-		if data['main']['temp'] >= 200:
+		if data['main']['temp'] >= openwindow_at:
 			return "Opening your window"
     			#open the window (Tom's job)
 if __name__ == '__main__':
