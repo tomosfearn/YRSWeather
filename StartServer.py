@@ -2,10 +2,10 @@
 from flask import Flask #Import flask mains
 from flask import request #Import flask requests
 from flask import render_template #Import flask render templates
+from flask import url_for
 import json, urllib #import api modules
 import time #Imporing time in darlek voice
-app = Flask(__name__)
-
+app = Flask(__name__, static_url_path="/static/css")
 @app.route('/')
 def my_form():
     return render_template("my-form.html") #Set render template
@@ -27,7 +27,6 @@ def my_form_post():
     print("Temp: " + str(data['main']['temp'])) #Print temp 
 
     if data['weather'][0]['description'].find("rain") >= 0: #Check The weather
-	print("Test")
 	return "Shutting your window"
 	#Close the window(Tom's job)
     elif float(data['main']['temp']) >= openwindow_at:
