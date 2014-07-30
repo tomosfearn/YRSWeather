@@ -30,9 +30,12 @@ def my_form_post():
 	print("Test")
 	return "Shutting your window"
 	#Close the window(Tom's job)
-    if float(data['main']['temp']) >= openwindow_at:
+    elif float(data['main']['temp']) >= openwindow_at:
 	return "Opening your window"
     	#open the window (Tom's job)
+    elif data['main']['temp'] < openwindow_at:
+	return "Shutting Your Window"
+	#Shut the window(Tom's job)
 if __name__ == '__main__':
     app.debug = True #Uncomment to enable debugging
     app.run() #Run the Server
