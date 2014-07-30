@@ -25,15 +25,14 @@ def my_form_post():
     data = json.loads(response.read()) #Parse json
     print("Current Weather in " + text + " " + data['weather'][0]['description']) #Debug infomation
     print("Temp: " + str(data['main']['temp'])) #Print temp 
-    while True:
-    	if data['weather'][0]['description'].find("rain") >= 0: #Check The weather
-		print("Test")
-		return "Shutting your window" #Send to page
-		#Close the window(Tom's job)
-    	else:
-		if data['main']['temp'] >= openwindow_at:
-			return "Opening your window" #Send to page
-    			#open the window (Tom's job)
+
+    if data['weather'][0]['description'].find("rain") >= 0: #Check The weather
+	print("Test")
+	return "Shutting your window"
+	Close the window(Tom's job)
+    if float(data['main']['temp']) >= openwindow_at:
+	return "Opening your window"
+    	#open the window (Tom's job)
 if __name__ == '__main__':
     app.debug = True #Uncomment to enable debugging
     app.run() #Run the Server
