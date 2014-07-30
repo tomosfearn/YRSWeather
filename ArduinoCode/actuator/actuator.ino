@@ -1,25 +1,38 @@
-const int fPin = 3;
-const int rPin = 4;
+const int dPin = 9;
+const int sPin = 10;
+
+int sVal = 0;
+int fVal = 140;
 
 void setup()
 {
-  pinMode(fPin, OUTPUT);
-  pinMode(rPin, OUTPUT);
-  digitalWrite(fPin, LOW);
-  digitalWrite(rPin, LOW);
+  pinMode(dPin, OUTPUT);
+  pinMode(sPin, OUTPUT);
+  analogWrite(dPin, sVal);
 }
 
-//assuming 0 is complete stop
-//it may be 127
-//ou will have to check
 void loop()
 {
-  // forwards
-  analogWrite(rPin, 0);
-  analogWrite(fPin, 255);
-  delay(1000);
-  //backwards
-  analogWrite(fPin, 0);
-  analogWrite(rPin, 255);
-  delay(1000);
+  actuatorForwards();
+  actuatorReverse();
 }
+
+void actuatorForwards()
+{
+  digitalWrite(sPin, HIGH);
+  analogWrite(dPin, fVal);
+  delay(10000);
+  analogWrite(dPin, sVal);
+  delay(1000);  
+}
+
+void actuatorReverse()
+{
+  digitalWrite(sPin, LOW);
+  analogWrite(dPin, fVal);
+  delay(10000);
+  analogWrite(dPin, sVal);
+  delay(10000); 
+}
+
+

@@ -1,16 +1,34 @@
+const int dPin = 9;
+const int sPin = 10;
+
+int sVal = 0;
+int fVal = 140;
+
+
 void setup() {
   // initialize serial:
   Serial.begin(9600);
   // make the pins outputs:
   pinMode(13, OUTPUT); 
+  pinMode(dPin, OUTPUT);
+  pinMode(sPin, OUTPUT);
+  analogWrite(dPin, sVal);
 }
 
 void Open(){
- //Needs coding 
+  digitalWrite(sPin, HIGH);
+  analogWrite(dPin, fVal);
+  delay(10000);
+  analogWrite(dPin, sVal);
+  delay(1000);  
 }
 
 void Close(){
- //Needs coding 
+  digitalWrite(sPin, LOW);
+  analogWrite(dPin, fVal);
+  delay(10000);
+  analogWrite(dPin, sVal);
+  delay(10000); 
 }
 
 
