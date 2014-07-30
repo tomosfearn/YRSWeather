@@ -10,7 +10,7 @@ app = Flask(__name__, static_url_path="/static/css")
 def my_form():
     return render_template("my-form.html") #Set render template
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST']) #Set the route
 def my_form_post():
     openwindow_at = float(request.form['open']) #When it reached ? open window
     if request.form['scale'] == "kelvin": #Change figures
