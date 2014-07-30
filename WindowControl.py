@@ -10,5 +10,3 @@ def Close():
 	ser = serial.Serial(0)
 	print ser.name
 	ser.write("Close")
-
-Open()
