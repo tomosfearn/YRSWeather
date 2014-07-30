@@ -12,7 +12,7 @@ void setup() {
   pinMode(13, OUTPUT); 
   pinMode(dPin, OUTPUT);
   pinMode(sPin, OUTPUT);
-  analogWrite(dPin, sVal);
+  //analogWrite(dPin, sVal);
 }
 
 void Open(){
@@ -32,21 +32,20 @@ void Close(){
 }
 
 
-
-
 void loop() 
 {
+  Close();
   // if there's any serial available, read it:
-  while (Serial.available() > 0) {
-    if (Serial.read() == 'Open') {
-      Open();
-      delay(1000);
-    }
-    //else if (Serial.read() == "Close"){
-     // Close();
+  //while (Serial.available() > 0) {
+    //if (Serial.read() == 'Open') {
+      //Open();
+      //delay(1000);
+    //}
+    //else if (Serial.read() == 'Close'){
+      //Close();
       //delay(1000); 
     //}
-  }
+  //}
 }
 
 

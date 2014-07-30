@@ -7,6 +7,9 @@ def Open():
 	ser.write("Open")
 
 def Close():
-	ser = serial.Serial(0)
+	ser = serial.Serial('/dev/ttyACM0')
 	print ser.name
 	ser.write("Close")
+
+while True:
+	Close()
