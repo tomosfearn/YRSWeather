@@ -33,13 +33,13 @@ def my_form_post():
 	WindowControl.Close()
 	#Close the window(Tom's job)
     elif float(data['main']['temp']) >= openwindow_at:
-	WindowControl.Open()
 	return "Opening your window And turning on fans"
+	WindowControl.Open()
 	#open the window (Tom's job)
     elif data['main']['temp'] < openwindow_at:
-	WindowControl.Close()
 	return "Shutting Your Window And turning off fans"
+	WindowControl.Close()
 	#Shut the window(Tom's job)
 if __name__ == '__main__':
-    app.debug = True #Uncomment to enable debugging
+    #app.debug = True #Uncomment to enable debugging
     app.run() #Run the Server
