@@ -12,7 +12,7 @@ def my_form():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
-    openwindow_at = int(request.form['open'])
+    openwindow_at = float(request.form['open'])
     if request.form['scale'] == "kelvin":
 	print("Do nothing")
     elif request.form['scale'] == "celcius":
@@ -24,6 +24,7 @@ def my_form_post():
     response = urllib.urlopen(url)
     data = json.loads(response.read())
     print("Current Weather in " + text + " " + data['weather'][0]['description'])
+    print(data['main']['temp'])
     while True:
     	if data['weather'][0]['description'].find("rain") >= 0:
 		return "Shutting your window"
