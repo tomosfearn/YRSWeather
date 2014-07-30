@@ -29,6 +29,7 @@ def my_form_post():
 
     if data['weather'][0]['description'].find("rain") >= 0: #Check The weather
 	return "Shutting your window"
+	WindowControl.Close()
 	#Close the window(Tom's job)
     elif float(data['main']['temp']) >= openwindow_at:
 	return "Opening your window And turning on fans"

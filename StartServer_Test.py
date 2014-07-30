@@ -34,10 +34,12 @@ def my_form_post():
 		#Close the window(Tom's job)
    	elif float(data['main']['temp']) >= openwindow_at:
 		print("Open Window")
+		WindowControl.Open()
 		#return "Opening your window And turning on fans"
     		#open the window (Tom's job)
     	elif data['main']['temp'] < openwindow_at:
 		print("Closing Window")
+		WindowControl.Close()
 		#return "Shutting Your Window And turning off fans"
 		#Shut the window(Tom's job)
 if __name__ == '__main__':
