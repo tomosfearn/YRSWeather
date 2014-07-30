@@ -32,9 +32,11 @@ def my_form_post():
 	#Close the window(Tom's job)
     elif float(data['main']['temp']) >= openwindow_at:
 	return "Opening your window And turning on fans"
-    	#open the window (Tom's job)
+    	WindowControl.Open()
+	#open the window (Tom's job)
     elif data['main']['temp'] < openwindow_at:
 	return "Shutting Your Window And turning off fans"
+	WindowControl.Close()
 	#Shut the window(Tom's job)
 if __name__ == '__main__':
     #app.debug = True #Uncomment to enable debugging
