@@ -34,17 +34,18 @@ void Close(){
 
 
 
-void loop() {
+void loop() 
+{
   // if there's any serial available, read it:
   while (Serial.available() > 0) {
     if (Serial.read() == 'Open') {
       Open();
       delay(1000);
     }
-    else if (Serial.read() == "Close"){
-      Close();
-      delay(1000); 
-    }
+    //else if (Serial.read() == "Close"){
+     // Close();
+      //delay(1000); 
+    //}
   }
 }
 
