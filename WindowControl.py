@@ -10,6 +10,3 @@ def Close():
 	ser = serial.Serial('/dev/ttyACM0')
 	print ser.name
 	ser.write("Close")
-
-while True:
-	Close()
