@@ -14,7 +14,7 @@ def my_form():
 def my_form_post():
     openwindow_at = float(request.form['open']) #When it reached ? open window
     if request.form['scale'] == "kelvin": #Change figures
-	print("Do nothing")
+	print("Do nothing") #Debug info
     elif request.form['scale'] == "celcius":
 	openwindow_at = openwindow_at + 273 #celcius to kelvin
     elif request.form['scale'] == "fah": #Fah to kelvin
@@ -34,4 +34,4 @@ def my_form_post():
     		#open the window (Tom's job)
 if __name__ == '__main__':
     #app.debug = True #Uncomment to enable debugging
-    app.run()
+    app.run() #Run the Server
