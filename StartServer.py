@@ -37,5 +37,5 @@ def my_form_post():
 	return "Shutting Your Window And turning off fans"
 	#Shut the window(Tom's job)
 if __name__ == '__main__':
-    app.debug = True #Uncomment to enable debugging
+    #app.debug = True #Uncomment to enable debugging
     app.run() #Run the Server
