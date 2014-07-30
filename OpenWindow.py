@@ -1,6 +1,10 @@
-from nanpy import (ArduinoApi, SerialManager)
+import serial
+def Open():
+	ser = serial.Serial(0)
+	print ser.name
+	ser.write("Open")
 
-connection = SerialManager()
-a = ArduinoApi(connection)
-a.pinMode(13, a.OUTPUT)
-a.digitalWrite(13, a.HIGH)
+def Close():
+	ser = serial.Serial(0)
+	print ser.name
+	ser.write("Close")
