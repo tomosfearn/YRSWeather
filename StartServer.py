@@ -5,6 +5,7 @@ from flask import render_template #Import flask render templates
 from flask import url_for
 import json, urllib #import api modules
 import time #Imporing time in darlek voice
+import WindowControl
 app = Flask(__name__, static_url_path="/static/css")
 @app.route('/')
 def my_form():
