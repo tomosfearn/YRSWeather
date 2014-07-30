@@ -16,7 +16,7 @@ def my_form_post():
     if request.form['scale'] == "kelvin": #Change figures
 	print("Do nothing") #Debug info
     elif request.form['scale'] == "celcius":
-	openwindow_at = openwindow_at + 273 #celcius to kelvin
+	openwindow_at = openwindow_at + int(273.15) #celcius to kelvin
     elif request.form['scale'] == "fah": #Fah to kelvin
 	openwindow_at = (openwindow_at + 459.67) * 5 / 9  #F to kelvin
     text = request.form['text'] #Get info from First page
