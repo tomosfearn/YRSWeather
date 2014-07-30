@@ -29,7 +29,7 @@ def my_form_post():
     if data['weather'][0]['description'].find("rain") >= 0: #Check The weather
 	print("Test")
 	return "Shutting your window"
-	Close the window(Tom's job)
+	#Close the window(Tom's job)
     if float(data['main']['temp']) >= openwindow_at:
 	return "Opening your window"
     	#open the window (Tom's job)
