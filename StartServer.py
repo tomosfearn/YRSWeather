@@ -21,8 +21,8 @@ def my_form_post():
 	openwindow_at = (openwindow_at + 459.67) * 5 / 9  #F to kelvin
     text = request.form['text']
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + text #Download the json
-    response = urllib.urlopen(url)
-    data = json.loads(response.read())
+    response = urllib.urlopen(url) #Download Json
+    data = json.loads(response.read()) #Parse json
     print("Current Weather in " + text + " " + data['weather'][0]['description'])
     print(data['main']['temp'])
     if data['weather'][0]['description'].find("rain") >= 0:
