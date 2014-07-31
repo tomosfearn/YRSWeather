@@ -1,12 +1,8 @@
-import serial
-import time
+import os
 
 def Open():
-	ser = serial.Serial('/dev/ttyACM0')
-	print ser.name
-	ser.write("Open")
-
+	os.chdir("/home/marley/YRSWeather/ArduinoCode/Open")
+	os.system("sudo ino upload")
 def Close():
-	ser = serial.Serial('/dev/ttyACM0')
-	print ser.name
-	ser.write("Close")
+	os.chdir('/home/marley/YRSWeather/ArduinoCode')
+	os.system('sudo ino upload')
