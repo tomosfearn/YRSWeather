@@ -28,15 +28,14 @@ def my_form_post():
     print("Temp: " + str(data['main']['temp'])) #Print temp 
 
     if data['weather'][0]['description'].find("rain") >= 0: #Check The weather
+	WindowControl.Close()
 	return "Shutting your window"
-	print("Test")
-	WindowControl.Close()
     elif float(data['main']['temp']) >= openwindow_at:
-	return "Opening your window And turning on fans"
 	WindowControl.Open()
+	return "Opening your window And turning on fans"
     elif data['main']['temp'] < openwindow_at:
-	return "Shutting Your Window And turning off fans"
 	WindowControl.Close()
+	return "Shutting Your Window And turning off fans"
 if __name__ == '__main__':
     #app.debug = True #Uncomment to enable debugging
-    app.run() #Run the Server
+    app.run(host='0.0.0.0') #Run the Server
