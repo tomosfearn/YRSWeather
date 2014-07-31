@@ -1,11 +1,6 @@
-YRSWeather
-==========
-
-┗[© ♒ ©]┛ ▘▂▝
-
-
 Requirements
-  Pip:
+ 
+ Pip:
     cd ~
     sudo apt-get install python-pip
   
