@@ -3,6 +3,9 @@ Installing Requirements
 	Pip sudo apt-get install python-pip
 	Flask sudo pip install flask
 	ino sudo pip install ino
+
+
+Instructions
 	
 	Running the webpage:
 		cd
