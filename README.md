@@ -28,6 +28,7 @@ Instructions
 
 Fixing Errors
 
+
 No sutch file or directory:
 	cd
 	cd YRSWeather
@@ -36,6 +37,8 @@ No sutch file or directory:
 	press CNTRL + X
 	press Y
 	press Enter 
+
+
 
 Any other errors:
 	Tell me!!
