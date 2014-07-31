@@ -29,19 +29,17 @@ Instructions
 Fixing Errors
 
 
-No sutch file or directory:
-	cd
-	cd YRSWeather
-	sudo nano WindowControl.py
-	Replace marley with username of account
-	press CNTRL + X
-	press Y
-	press Enter 
+	No sutch file or directory:
+		cd
+		cd YRSWeather
+		sudo nano WindowControl.py
+		Replace marley with username of account
+		press CNTRL + X
+		press Y
+		press Enter 
 
-
-
-Any other errors:
-	Tell me!!
+	Any other errors:
+		Tell me!!
 
 
 
