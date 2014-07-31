@@ -24,4 +24,22 @@ Instructions
 		cd ArduinoCode/Close
 		sudo ino upload
 
+
+
+Fixing Errors
+
+No sutch file or directory:
+	cd
+	cd YRSWeather
+	sudo nano WindowControl.py
+	Replace marley with username of account
+	press CNTRL + X
+	press Y
+	press Enter 
+
+Any other errors:
+	Tell me!!
+
+
+
 Thats all
