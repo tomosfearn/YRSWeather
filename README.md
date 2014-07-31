@@ -1,3 +1,5 @@
+Read README in vim or nano or word processor
+
 Requirements
  
  Pip:
