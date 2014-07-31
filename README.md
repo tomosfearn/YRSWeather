@@ -44,21 +44,21 @@ Fixing Errors
 
 
 
-	Running Test Code:
-		Init setup:
-			cd
-			cd YRSWeather
-			cd ArduinoCode
-			cd Open
-			sudo ino build
-			cd ..
-			cd Close
-			sudo ino build
+Running Test Code
+	Init setup:
+		cd
+		cd YRSWeather
+		cd ArduinoCode
+		cd Open
+		sudo ino build
+		cd ..
+		cd Close
+		sudo ino build
 		
 	Starting Server:
-			cd 
-			cd YRSWeather
-			cd RealCode
-			sudo python StartServer.py
+		cd 
+		cd YRSWeather
+		cd RealCode
+		sudo python StartServer.py
 
 Thats all
