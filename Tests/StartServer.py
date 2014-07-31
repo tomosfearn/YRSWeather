@@ -15,18 +15,22 @@ def my_form():
 def my_form_post():
     text = request.form['text'] #Get info from First page
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + text #Download the json
-    
     while True:
-    	response = urllib.urlopen(url) #Download Json
-    	data = json.loads(response.read()) #Parse json
-    	print("Current Weather in " + text + " " + data['weather'][0]['description']) #Debug infomation
-    	print("Temp: " + str(data['main']['temp'])) #Print temp 
-	if data['weather'][0]['description'].find('rain') > 0:
-		WindowControl.Close()
-	elif data['main']['temp'] >= 291.15:
-		WindowControl.Open()
+	response = urllib.urlopen(url) #Download Json
+        data = json.loads(response.read()) #Parse json
 
+    	while OldTemp != data['main']['temp'] or OldWeather != data['weather']['description']:
+    		response = urllib.urlopen(url) #Download Json
+    		data = json.loads(response.read()) #Parse json
+    		print("Current Weather in " + text + " " + data['weather'][0]['description']) #Debug infomation
+    		print("Temp: " + str(data['main']['temp'])) #Print temp 
+		OldTemp = data['main']['temp']
+		OldWeather = data['weather']['description']
+		if data['weather'][0]['description'].find('rain') > 0:
+			WindowControl.Close()
+		elif data['main']['temp'] >= 298.15:
+			WindowControl.Open()
 
 if __name__ == '__main__':
     app.debug = True #Uncomment to enable debugging
-    app.run(host='0.0.0.0') #Run the Server
+    app.run() #Run the Server
