@@ -14,12 +14,14 @@ void setup()
 {
   pinMode(dPin, OUTPUT);
   pinMode(sPin, OUTPUT);
+  pinMode(11,OUTPUT);
+  digitalWrite(11,HIGH);
   analogWrite(dPin, sVal);
 }
 
 void loop()
 {
-  actuatorReverse();
+   actuatorReverse();
 }
 
 void actuatorReverse()
@@ -30,5 +32,3 @@ void actuatorReverse()
   analogWrite(dPin, sVal);
   delay(10000); 
 }
-
-

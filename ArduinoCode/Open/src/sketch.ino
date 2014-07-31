@@ -9,6 +9,8 @@ void setup()
 {
   pinMode(dPin, OUTPUT);
   pinMode(sPin, OUTPUT);
+  pinMode(11,OUTPUT);
+  digitalWrite(11,LOW); 
   analogWrite(dPin, sVal);
 }
 

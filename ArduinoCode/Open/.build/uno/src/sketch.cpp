@@ -4,6 +4,7 @@ void setup();
 void loop();
 void actuatorForwards();
 #line 1 "src/sketch.ino"
+//Arduino Code
 const int dPin = 9;
 const int sPin = 10;
 
@@ -14,6 +15,8 @@ void setup()
 {
   pinMode(dPin, OUTPUT);
   pinMode(sPin, OUTPUT);
+  pinMode(11,OUTPUT);
+  digitalWrite(11,LOW); 
   analogWrite(dPin, sVal);
 }
 
