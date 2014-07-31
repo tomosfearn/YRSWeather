@@ -23,10 +23,9 @@ def my_form_post():
     text = request.form['text'] #Get info from First page
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + text #Download the json
     response = urllib.urlopen(url) #Download Json
-    data = json.loads(response) #Parse json
+    data = json.loads(response.read()) #Parse json
     print("Current Weather in " + text + " " + data['weather'][0]['description']) #Debug infomation
     print("Temp: " + str(data['main']['temp'])) #Print temp 
-
     if data['weather'][0]['description'].find("rain") >= 0: #Check The weather
 	WindowControl.Close()
 	return "Shutting your window"
@@ -37,5 +36,5 @@ def my_form_post():
 	WindowControl.Close()
 	return "Shutting Your Window And turning off fans"
 if __name__ == '__main__':
-    #app.debug = True #Uncomment to enable debugging
+    app.debug = True #Uncomment to enable debugging
     app.run(host='0.0.0.0') #Run the Server
