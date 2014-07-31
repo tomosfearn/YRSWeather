@@ -23,7 +23,7 @@ def my_form_post():
     text = request.form['text'] #Get info from First page
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + text #Download the json
     response = urllib.urlopen(url) #Download Json
-    data = json.loads(response.read()) #Parse json
+    data = json.loads(response) #Parse json
     print("Current Weather in " + text + " " + data['weather'][0]['description']) #Debug infomation
     print("Temp: " + str(data['main']['temp'])) #Print temp 
 
