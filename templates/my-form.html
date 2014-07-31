@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Control Panel</title>
+</head>
+<style>
+/*Body css*/
+html{
+background-color: #00697d;
+border: 2px solid #999999;
+-moz-border-radius: 50px;
+-webkit-border-radius: 50px;
+border-radius: 50px;
+/*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+-moz-box-shadow: 0px 0px 13px #000000;
+-webkit-box-shadow: 0px 0px 13px #000000;
+box-shadow: 0px 0px 13px #000000;
+/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+
+}
+
+body{
+background-color: #12ffb9;
+border: 2px solid #999999;
+-moz-border-radius: 50px;
+-webkit-border-radius: 50px;
+border-radius: 50px;
+/*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+-moz-box-shadow: 0px 0px 20px #000000;
+-webkit-box-shadow: 0px 0px 20px #000000;
+box-shadow: 0px 0px 20px #000000;
+/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+opacity: 0.64;
+-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 64);
+/*-ms-filter must come before filter*/
+filter: alpha(opacity = 64);
+/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+/*All filters must be placed together*/
+
+}
+
+.textBOX{
+-moz-border-radius: 50px;
+-webkit-border-radius: 50px;
+border-radius: 50px;
+/*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+-moz-box-shadow: 0px 0px 13px #000000;
+-webkit-box-shadow: 0px 0px 13px #000000;
+box-shadow: 0px 0px 13px #000000;
+/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+}
+</style>
+
+
+
+<body>
+    <h1>Enter a place</h1>
+    <form action="." method="POST">
+        <input type="text" name="text" class="textBOX">
+    <h1>Options</h1>
+	<p>Open window if temp is greater than<input type="textBOX" name="open" class="TextBOX"></input> <input type="radio" name="scale" value="kelvin">Kelvin</input><input type="radio" name="scale" value="celcius">Celcius</input><input type="radio" name="scale" value="fah">FarenHeit</input></p>
+   <center> <input type="submit" name="my-form" value="Start"></center>
+    </form>
+</body>
+</html>
