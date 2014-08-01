@@ -6,5 +6,3 @@ while True:
 		WindowControl.Open()
 	elif input.upper == "CLOSE":
 		WindowControl.Close()
-	else:
-		print("ERROR!!")
