@@ -1,2 +1,4 @@
-.d #Build files
-
+*.d #Build files
+*.o
+*.cpp
+*.pickle
